@@ -2,18 +2,24 @@
 
 int main() {
 
-	Graph G1(6);
+    Graph graph(0); 
 
-	G1.addEdge(0, 1);
-	G1.addEdge(0, 2);
-	G1.addEdge(1, 3);
-	G1.addEdge(1, 4);
-	G1.addEdge(1, 5);
-	G1.addEdge(2, 4);
+    ifstream file("graph.txt"); 
+
+    if (file.is_open()) {
+        file >> graph; 
+        file.close(); 
+    }
+    else {
+        cerr << "Unable to open file!" << endl;
+        return 1;
+    };
 	
-
-	cout << "DFS result: " << endl;
-	G1.DFS(0);
+	graph.DFS(0);
+    cout << endl;
+    graph.printAdjacencyList();
+    cout << endl;
+    graph.printAdjacencyMatrix();
 
 	return 0;
 }
