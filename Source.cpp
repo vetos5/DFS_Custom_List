@@ -2,6 +2,7 @@
 
 int main() {
 
+
     Graph graph(0); 
 
     ifstream file("graph.txt"); 
@@ -15,7 +16,7 @@ int main() {
         return 1;
     };
 	
-	graph.DFS(0);
+	graph.DFS(2);
     cout << endl;
     graph.printAdjacencyList();
     cout << endl;

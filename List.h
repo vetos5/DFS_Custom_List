@@ -77,6 +77,7 @@ public:
         }
     }
 
+
     int size() const {
         int count = 0;
         ListNode<T>* current = head;
@@ -85,6 +86,15 @@ public:
             current = current->next;
         }
         return count;
+    }
+
+    void print() const {
+        ListNode<T>* current = head;
+        while (current) {
+            cout << current->data << " ";
+            current = current->next;
+        }
+        cout << endl;
     }
 
     ListNode<T>* getHead() const {
